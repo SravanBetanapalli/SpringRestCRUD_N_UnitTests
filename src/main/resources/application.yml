@@ -7,3 +7,5 @@ spring:
 
   #JPA Settings
     jpa.hibernate.ddl_auto: create/update
+  jpa:
+    defer-datasource-initialization=true:

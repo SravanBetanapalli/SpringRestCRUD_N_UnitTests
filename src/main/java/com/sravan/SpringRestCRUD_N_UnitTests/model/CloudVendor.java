@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="cloud_vendor_info")
+@Table(name = "cloud_vendor_info", schema = "cloud_vendor_info")
 public class CloudVendor {
 
         @Id
@@ -42,3 +42,16 @@ public class CloudVendor {
     }
 
 }
+
+/*
+
+MySQL query to be executed for creating table
+
+  CREATE TABLE cloud_vendor_info.cloud_vendor_info (
+    vendor_id VARCHAR(255) PRIMARY KEY,
+    vendor_name VARCHAR(255),
+    vendor_address VARCHAR(255),
+    vendor_phone_number VARCHAR(255)
+);
+*/
+

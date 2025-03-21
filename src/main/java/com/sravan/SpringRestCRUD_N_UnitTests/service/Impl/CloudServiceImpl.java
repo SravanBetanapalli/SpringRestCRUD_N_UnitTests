@@ -1,6 +1,6 @@
 package com.sravan.SpringRestCRUD_N_UnitTests.service.Impl;
 
-import com.sravan.SpringRestCRUD_N_UnitTests.CloudVendorRepository;
+import com.sravan.SpringRestCRUD_N_UnitTests.repository.CloudVendorRepository;
 import com.sravan.SpringRestCRUD_N_UnitTests.model.CloudVendor;
 import com.sravan.SpringRestCRUD_N_UnitTests.service.CloudVendorService;
 import org.springframework.stereotype.Service;

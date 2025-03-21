@@ -48,9 +48,9 @@ public class CloudVendorAPIController {
     @DeleteMapping("/deletevendor/{vendorId}")
     public String deleteCloudVendorDetails(@PathVariable("vendorId") String vendorId){
 
-        if(this.cloudVendor.getVendorId().equals(vendorId)){
+        if(cloudVendorService.getCloudVendor(vendorId).isPresent()){
         cloudVendorService.deleteCloudVendor(vendorId);
-        }
+        }else return "CloudVendor of id - " +vendorId+" - is already deleted before";
         return "CloudVendor of id - " +vendorId+" - is deleted";
     }
 }
