@@ -1,5 +1,6 @@
 package com.sravan.SpringRestCRUD_N_UnitTests.service.Impl;
 
+import com.sravan.SpringRestCRUD_N_UnitTests.exception.CloudVendorNotFoundException;
 import com.sravan.SpringRestCRUD_N_UnitTests.repository.CloudVendorRepository;
 import com.sravan.SpringRestCRUD_N_UnitTests.model.CloudVendor;
 import com.sravan.SpringRestCRUD_N_UnitTests.service.CloudVendorService;
@@ -37,6 +38,10 @@ public class CloudServiceImpl implements CloudVendorService {
 
     @Override
     public Optional<CloudVendor> getCloudVendor(String cloudVendorId) {
+        if(!cloudVendorRepository.findById(cloudVendorId).isPresent())
+        {
+            throw new CloudVendorNotFoundException("Requested Cloud Vendor is not present in DB");
+        }
         return cloudVendorRepository.findById(cloudVendorId);
     }
 
